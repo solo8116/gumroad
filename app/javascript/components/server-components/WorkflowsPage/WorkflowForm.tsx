@@ -119,8 +119,8 @@ const WorkflowForm = () => {
       affiliatedProducts: workflow.affiliate_products ?? [],
       bought,
       notBought: workflow.not_bought_products || workflow.not_bought_variants || [],
-      paidMoreThan: workflow.paid_more_than ? parseInt(workflow.paid_more_than.replaceAll(",", ""), 10) : null,
-      paidLessThan: workflow.paid_less_than ? parseInt(workflow.paid_less_than.replaceAll(",", ""), 10) : null,
+      paidMoreThan: workflow.paid_more_than ? parseFloat(workflow.paid_more_than.replaceAll(",", "")) : null,
+      paidLessThan: workflow.paid_less_than ? parseFloat(workflow.paid_less_than.replaceAll(",", "")) : null,
       afterDate: workflow.created_after ?? "",
       beforeDate: workflow.created_before ?? "",
       fromCountry: workflow.bought_from ?? "",
@@ -533,6 +533,7 @@ const WorkflowForm = () => {
                   <label htmlFor="paid_more_than">Paid more than</label>
                 </legend>
                 <NumberInput
+                  decimal
                   onChange={(paidMoreThan) => updateFormState({ paidMoreThan })}
                   value={formState.paidMoreThan}
                 >
@@ -557,6 +558,7 @@ const WorkflowForm = () => {
                   <label htmlFor="paid_less_than">Paid less than</label>
                 </legend>
                 <NumberInput
+                  decimal
                   onChange={(paidLessThan) => updateFormState({ paidLessThan })}
                   value={formState.paidLessThan}
                 >
