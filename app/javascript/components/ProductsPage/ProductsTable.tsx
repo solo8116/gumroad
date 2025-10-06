@@ -31,6 +31,7 @@ export const ProductsPageProductsTable = (props: {
     pagination: props.pagination,
     isLoading: false,
   });
+  const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
   const activeRequest = React.useRef<{ cancel: () => void } | null>(null);
   const tableRef = React.useRef<HTMLTableElement>(null);
   const { locale } = useUserAgentInfo();
@@ -46,6 +47,8 @@ export const ProductsPageProductsTable = (props: {
     setState((prevState) => ({ ...prevState, isLoading: true }));
     try {
       activeRequest.current?.cancel();
+
+      setSelectedProduct(null);
 
       const request = getPagedProducts({
         page,
@@ -107,7 +110,12 @@ export const ProductsPageProductsTable = (props: {
 
         <tbody>
           {products.map((product) => (
-            <tr key={product.id}>
+            <tr
+              key={product.id}
+              aria-selected={product.id === selectedProduct?.id}
+              onClick={() => setSelectedProduct(product)}
+              onMouseOut={() => setSelectedProduct(null)}
+            >
               <td className="icon-cell">
                 {product.thumbnail ? (
                   <a href={product.can_edit ? product.edit_url : product.url}>
