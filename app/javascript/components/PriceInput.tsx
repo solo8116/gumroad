@@ -3,6 +3,7 @@ import * as React from "react";
 
 import {
   CurrencyCode,
+  findCurrencyByCode,
   formatPriceCentsWithoutCurrencySymbolAndComma,
   getLongCurrencySymbol,
   parseCurrencyUnitStringToCents,
@@ -69,7 +70,7 @@ export const PriceInput = React.forwardRef<
               onChange={currencyCodeSelector.onChange}
               options={currencyCodeSelector.options.map((currencyCode) => ({
                 id: currencyCode,
-                label: getLongCurrencySymbol(currencyCode),
+                label: findCurrencyByCode(currencyCode).displayFormat,
               }))}
             />
           </div>
