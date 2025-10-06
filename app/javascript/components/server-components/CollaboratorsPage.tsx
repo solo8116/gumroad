@@ -250,7 +250,7 @@ const Collaborators = () => {
                       {collaborator.invitation_accepted ? <>Accepted</> : <>Pending</>}
                     </td>
                     <td>
-                      <div className="actions" onClick={(e) => e.stopPropagation()}>
+                      <div className="actions cursor-default" onClick={(e) => e.stopPropagation()}>
                         <Link
                           to={`/collaborators/${collaborator.id}/edit`}
                           className="button"
