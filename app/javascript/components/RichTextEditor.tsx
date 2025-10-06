@@ -272,6 +272,19 @@ export const useRichTextEditor = ({
           event.preventDefault();
           return true;
         },
+        keydown(_, event) {
+          if (!editor) {
+            return false;
+          }
+
+          if (event.key === "Tab") {
+            event.preventDefault();
+            editor.chain().focus().insertContent("    ").run();
+            return true;
+          }
+
+          return false;
+        },
       },
     },
     content,
