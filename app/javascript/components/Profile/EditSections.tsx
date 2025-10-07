@@ -632,7 +632,7 @@ export const AddSectionButton = ({ position, index }: { index: number } & Pick<P
       onToggle={setOpen}
       position={position}
       aria-label="Add section"
-      className="add-section"
+      className="add-section z-0"
       trigger={<Icon name="plus" />}
     >
       <div role="menu" onClick={() => setOpen(false)}>
