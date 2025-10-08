@@ -30,6 +30,10 @@ export const NumberInput = ({ children, onChange, value, decimal }: Props) => {
         if (parts.length > 2) {
           numericString = parts[0] + "." + parts.slice(1).join("");
         }
+        if (parts[1] && parts[1].length > 2) {
+          parts[1] = parts[1].slice(0, 2);
+          numericString = parts.join(".");
+        }
       }
 
       setRawInput(numericString);
