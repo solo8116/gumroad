@@ -597,13 +597,13 @@ const ContentTabContent = ({ selectedVariantId }: { selectedVariantId: string | 
 
                 <Modal open={showEmbedModal} onClose={() => setShowEmbedModal(false)} title="Embed media">
                   <p>Paste a video link or upload images or videos.</p>
-                  <Tabs>
-                    <Tab isSelected aria-controls={`${uid}-embed-tab`}>
+                  <Tabs className="flex flex-wrap overflow-visible">
+                    <Tab isSelected aria-controls={`${uid}-embed-tab`} className="button flex-1">
                       <Icon name="link" />
                       <h4>Embed link</h4>
                     </Tab>
-                    <Tab isSelected={false}>
-                      <label className="button">
+                    <Tab isSelected={false} className="button flex-1">
+                      <label>
                         <input
                           type="file"
                           accept="image/*,video/*"
