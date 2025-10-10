@@ -1,0 +1,13 @@
+@layer components {
+  .paragraphs {
+    @apply flex flex-col gap-[var(--spacer-4)];
+  }
+
+  .input-with-button {
+    @apply grid grid-flow-col grid-cols-[1fr] auto-cols-max items-center gap-[var(--spacer-3)];
+  }
+
+  .button-group {
+    @apply flex flex-wrap gap-[var(--spacer-2)];
+  }
+}
