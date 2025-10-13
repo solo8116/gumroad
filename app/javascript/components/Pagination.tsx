@@ -56,7 +56,7 @@ export const Pagination = ({ pagination, pageDisplayCount = 10, onChangePage }: 
         <Icon name="outline-cheveron-left" />
         Previous
       </Button>
-      <menu className="hidden! lg:flex! lg:grow! lg:justify-center! lg:gap-[var(--spacer-2)]!">
+      <menu className="hidden! lg:flex! lg:grow! lg:justify-center! lg:gap-2">
         {firstBoundaryPageShown ? (
           <>
             <PageNumber page={1} isCurrent={pagination.page === 1} onClick={() => onChangePage(1)} />
