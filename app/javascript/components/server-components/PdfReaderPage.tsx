@@ -199,7 +199,7 @@ export const PdfReaderPage = ({
           </div>
           <div className="right">
             <div
-              className="flex w-full justify-center gap-[var(--spacer-2)]"
+              className="flex w-full justify-center gap-2"
               style={{ whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}
             >
               {pageNumber} of {pageCount}
