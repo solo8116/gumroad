@@ -498,7 +498,7 @@ const RichTextSectionView = ({ section }: { section: RichTextSection }) => {
           <RichTextEditorToolbar editor={editor} productId={section.id} />
         </div>
       ) : null}
-      <EditorContent editor={editor} className="rich-text p-1" />
+      <EditorContent editor={editor} className="rich-text lg:p-1" />
     </SectionLayout>
   );
 };
